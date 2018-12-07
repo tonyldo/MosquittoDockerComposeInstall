@@ -1,0 +1,15 @@
+version: '3' 
+services:
+  mqtt:
+    image: eclipse-mosquitto:latest
+    container_name: MQTT
+    restart: unless-stopped
+    env_file:
+      - mqtt.env
+    ports:
+      - "1888:1883"
+      - "9001:9001"
+    volumes:
+      - ./mosquitto-entrypoint.sh:/docker-entrypoint.sh
+    entrypoint: ["sh", "/docker-entrypoint.sh"]
+    command: ["/usr/sbin/mosquitto", "-c", "/mosquitto/config/mosquitto.conf"]
