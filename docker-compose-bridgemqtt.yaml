@@ -1,0 +1,9 @@
+version: '3'
+services:
+  mosquitto:
+    env_file:
+      - mqtt.env
+      - mqtt_bridge.env
+    volumes:
+      - ./mosquitto-entrypoint.sh:/docker-entrypoint.sh
+      - /etc/ssl/certs/:/etc/ssl/certs/
