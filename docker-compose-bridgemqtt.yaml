@@ -2,8 +2,8 @@ version: '3'
 services:
   mosquitto:
     env_file:
-      - mqtt.env
-      - mqtt_bridge.env
+      - $MOSQUITTO_INSTALL_WORK_DIR/mqtt.env
+      - $MOSQUITTO_INSTALL_WORK_DIR/mqtt_bridge.env
     volumes:
-      - ./mosquitto-entrypoint.sh:/docker-entrypoint.sh
+      - $MOSQUITTO_INSTALL_WORK_DIR//mosquitto-entrypoint.sh:/docker-entrypoint.sh
       - ${CACERT_FILE}:/etc/ssl/certs/ca-certificates.crt

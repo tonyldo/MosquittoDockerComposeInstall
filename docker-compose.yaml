@@ -5,10 +5,10 @@ services:
     container_name: MQTT
     restart: unless-stopped
     env_file:
-      - mqtt.env
+      - $MOSQUITTO_INSTALL_WORK_DIR/mqtt.env
     ports:
       - "1883:1883"
     volumes:
-      - ./mosquitto-entrypoint.sh:/docker-entrypoint.sh
+      - $MOSQUITTO_INSTALL_WORK_DIR/mosquitto-entrypoint.sh:/docker-entrypoint.sh
     entrypoint: ["sh", "/docker-entrypoint.sh"]
     command: ["/usr/sbin/mosquitto", "-c", "/mosquitto/config/mosquitto.conf"]
