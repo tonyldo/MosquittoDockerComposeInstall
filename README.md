@@ -11,6 +11,6 @@
      $ docker-compose up --build
 ## 6 - Running with Bridge MQTT options
      #For bridge a external mqtt broker like cloudmqtt.com, edit mqtt_bridge.env with external broker parameters then:
-     #!!!!This use a SSL connection configurarion whit the Bridge Server, and you need providing a cacert path like on line 9 for docker-compose-bridgemqtt.yaml
+     #!!!!This use a SSL connection configurarion whit the Bridge Server, and you need providing a ca-certificates file path like on .env file
      $ docker-compose -f docker-compose.yaml -f docker-compose-bridgemqtt.yaml up --build
      

@@ -6,4 +6,4 @@ services:
       - mqtt_bridge.env
     volumes:
       - ./mosquitto-entrypoint.sh:/docker-entrypoint.sh
-      - /etc/ssl/certs/:/etc/ssl/certs/
+      - ${CACERT_FILE}:/etc/ssl/certs/ca-certificates.crt
