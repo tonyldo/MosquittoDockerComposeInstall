@@ -27,7 +27,7 @@ if ( [ -z "${EXTERNAL_MQTT_SERVER}" ] || [ -z "${EXTERNAL_MQTT_PORT}" ] || [ -z 
     sed -i 's/#address <host>\[:<port>\] \[<host>\[:<port>\]\]/address '"$EXTERNAL_MQTT_SERVER"':'"$EXTERNAL_MQTT_PORT"'/g' /mosquitto/config/mosquitto.conf
     sed -i 's/#topic <topic> \[\[\[out | in | both\] qos-level\] local-prefix remote-prefix\]/topic # both/g' /mosquitto/config/mosquitto.conf
     sed -i 's/#bridge_protocol_version mqttv311/bridge_protocol_version mqttv311/g' /mosquitto/config/mosquitto.conf
-    sed -i 's/#cleansession false/cleansession true/g' /mosquitto/config/mosquitto.conf
+    sed -i 's/#cleansession false/cleansession false/g' /mosquitto/config/mosquitto.conf
     sed -i 's/#keepalive_interval 60/keepalive_interval 300/g' /mosquitto/config/mosquitto.conf
     sed -i 's/#local_clientid/local_clientid internalMosquitoMQTTBroker/g' /mosquitto/config/mosquitto.conf
     sed -i 's/#start_type automatic/start_type automatic/g' /mosquitto/config/mosquitto.conf
